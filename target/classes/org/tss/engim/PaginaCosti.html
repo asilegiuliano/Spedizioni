@@ -1,0 +1,29 @@
+<wicket:extend>
+  <h3>Pagina Costi</h3>
+
+  <table wicket:id="costi">
+    
+  </table>
+  
+  
+  <form wicket:id="editCosto">
+    <fieldset>
+      <label for="id">Id:
+        <input type="text" wicket:id="id" id="id">
+      </label>
+      <label for="nomeMezzo">Nome Mezzo:
+        <input type="text" wicket:id="nomeMezzo" id="nomeMezzo">
+      </label>
+      <br>
+      <label for="pesoMassimo">Peso Massimo:
+        <input type="text" wicket:id="pesoMassimo" id="pesoMassimo">
+      </label>
+      <label for="costo">Costo:
+        <input type="text" wicket:id="costo" id="costo">
+      </label>
+    </fieldset>
+    <input type="submit" value="Salva">
+    <span wicket:id="feedback"></span>
+  </form> 
+  
+</wicket:extend>

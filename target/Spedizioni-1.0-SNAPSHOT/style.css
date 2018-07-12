@@ -1,0 +1,118 @@
+body 
+{
+    background: whitesmoke;
+    font-family: sans-serif;}
+
+ul
+{
+    background-color: #39444b;
+    color: whitesmoke;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+li{ display: inline;
+
+}
+
+ul li a
+{
+    text-decoration: none;
+    color: white;
+    padding: 5%;
+    transition: .25s ease-in-out;
+}
+
+ul li a:hover
+{
+    color: #96ad65;
+}
+
+h3
+{
+    margin-top: 5%;
+    text-align: center;
+    color: #39444b;
+}
+
+table 
+{
+    color: #39444b;
+    text-align: center;
+    width: 100%;
+    padding: 5%;
+}
+
+th 
+{
+    padding: 1%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: #39444b;
+    transition: .25s ease-in-out;
+}
+
+th:hover
+{
+    color: #96ad65;
+}
+
+tr 
+{
+    padding: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+td 
+{
+    padding: 1%; 
+    text-align: center;
+}
+
+td a 
+{
+    color: #39444b;
+    transition: .25s ease-in-out;
+}
+
+td a:hover
+{
+    color:#96ad65;
+}
+
+fieldset 
+{
+    background-color: whitesmoke;
+    border: 1px #39444b solid;
+    text-align: center;
+    padding: 2%;
+}
+
+label 
+{
+    color: #39444b;
+    margin: 2%;
+}
+
+input 
+{
+    margin-top: 20px;
+}
+
+.sub
+{
+    background-color: #39444b;
+    color: whitesmoke;
+    border: 1px #39444b solid;
+    border-radius: 2px;
+    margin: 2%;
+    padding: 1%;
+    transition: .25s ease-in-out;
+}
+
+.sub:hover
+{
+    color: #96ad65;
+}
+
