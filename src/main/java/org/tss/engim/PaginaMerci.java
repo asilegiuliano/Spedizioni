@@ -8,6 +8,7 @@ import org.apache.wicket.extensions.markup.html.repeater.data.table.DefaultDataT
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.PropertyColumn;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
@@ -25,7 +26,7 @@ public class PaginaMerci extends PaginaBase
     PropertyColumn <Merce, String> peso = new PropertyColumn<>(Model.of("Peso"), "peso");
 
     // COLONNA AZIONI PER AGGIORNARE, MODIFICARE O ELIMINARE
-    /*
+    
     AbstractColumn<Merce, String> azioni = new AbstractColumn<Merce, String>(Model.of("Azioni"))
     {
       @Override
@@ -34,18 +35,18 @@ public class PaginaMerci extends PaginaBase
         item.add(new AzioniPanel(wicketid, imodel.getObject()));
       }
     };
-    */
+    
     merce.add(id);
     merce.add(codice);
     merce.add(descrizione);
     merce.add(peso);
-    // merce.add(azioni);
+    merce.add(azioni);
     
     SPDataProvider<Merce> dataprov = new SPDataProvider<>(Merce.class);
     
     DefaultDataTable table = new DefaultDataTable ("merci", merce, dataprov, 10);
     
     add(table);
-    // add(new FormEditMerce("editMerci"));
+    add(new FormEditMerce("editMerci"));
   }
 }

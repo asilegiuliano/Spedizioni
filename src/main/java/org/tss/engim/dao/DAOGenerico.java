@@ -9,18 +9,18 @@ public class DAOGenerico
 {
   public static void inserisci_o_aggiorna(ChiavePrimaria p)
   {
-    EntityManager em = PM.db();
-    EntityTransaction et = em.getTransaction(); // BEGIN
+    EntityManager em = PM.db(); // connect db
+    EntityTransaction et = em.getTransaction(); // BEGIN transaction
     try
     {
       et.begin();
       if (p.getId() == null)
       {
-        em.persist(p);
+        em.persist(p); // insert
       }
       else
       {
-        em.merge(p);
+        em.merge(p); // update
       }
       et.commit();
     }

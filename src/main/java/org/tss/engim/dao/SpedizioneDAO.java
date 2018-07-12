@@ -73,6 +73,7 @@ public class SpedizioneDAO
           minimo = cmt;
           else
           {
+            // guardare decimal format per avere solo due cifre dopo la virgola
             if (cmt.getCosto().floatValue() < minimo.getCosto().floatValue())
               minimo = cmt;
           }
