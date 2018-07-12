@@ -47,37 +47,45 @@ public class SpedizioneDAO
     }
   }
   
-  /*
-  public static String costoBasso(Spedizione s)
+  // ritorna un oggetto CostoMezzoTrasporto perchè la stringa finale è € + costo + stringa
+  public static CostoMezzoTrasporto costoBasso(Spedizione s)
   {
-    double pesoDaTrasportare = pesoTotale(s);
-    
-    CostoMezzoTrasporto minimo = null;
+    double pesoSpedizione = pesoTotale(s);
     
     EntityManager db = PM.db();
     
-    try{
+    try
+    {
+      
+      // metodo Java per ottenere la lista di tutti i record, non tramite la namedquery
       TypedQuery<CostoMezzoTrasporto> selectAll = 
               db.createNamedQuery("CostoMezzoTrasporto.findAll", CostoMezzoTrasporto.class);
       
       
-      List<CostoMezzoTrasporto> tutti = selectAll.getResultList();
-      for (CostoMezzoTrasporto cmt: tutti)
+      List<CostoMezzoTrasporto> results = selectAll.getResultList();
+      CostoMezzoTrasporto minimo = null;
+      for (CostoMezzoTrasporto cmt: results)
       {
-        if (minimo == null)
-          minimo = cmt;
-        else
+        if (cmt.getPesoMassimo().floatValue() >= pesoSpedizione) 
         {
-          if (cmt.getPesoMassimo() >= pesoDaTrasportare &&
-              cmt.getCosto() < minimo.getCosto())
-            minimo = cmt;
+          // non passa nel secondo if se non ha la condizione del primo
+          if (minimo == null)
+          minimo = cmt;
+          else
+          {
+            if (cmt.getCosto().floatValue() < minimo.getCosto().floatValue())
+              minimo = cmt;
+          }
         }
+        
       }
-      double costo = minimo.getCosto();
       
-      String costoString = minimo.getNomeMezzo();
+      return minimo;
+      // double costo = minimo.getCosto().floatValue();
       
-      return costo + " " + "(" + costoString + ")";
+      // String costoString = minimo.getNomeMezzo();
+      // monto la stringa, nel dao non ho riferimenti, è la pagina CostoMezzoTrasporto a occuparsi della lingua
+      // return costo + " " + "(" + costoString + ")";
     }
     
     finally
@@ -85,5 +93,5 @@ public class SpedizioneDAO
       db.close();
     }
   }
-*/
+  
 }

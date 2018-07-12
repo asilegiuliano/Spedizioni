@@ -12,6 +12,7 @@ import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.tss.engim.dao.SpedizioneDAO;
+import org.tss.engim.db.CostoMezzoTrasporto;
 // import org.engim.db.CostoMezzoTrasporto;
 import org.tss.engim.db.Spedizione;
 
@@ -39,18 +40,19 @@ public class PaginaSpedizioni extends PaginaBase
     };
     
     // ABSTRACT COLUMN COSTO TOTALE
-    /*
-    AbstractColumn <Spedizione, String> costoBas = new AbstractColumn <Spedizione, String>(Model.of("Costo più basso"))
+    
+    AbstractColumn <Spedizione, String> mdt = new AbstractColumn <Spedizione, String>(Model.of("Mezzo"))
     {
       @Override
-      public void populateItem(Item<ICellPopulator<Spedizione>> item, String wicketid, IModel<Spedizione> imodel)
+      public void populateItem(Item<ICellPopulator<Spedizione>> item, String wicketid, IModel<Spedizione> rowmodel)
       {
-        String costoBas = SpedizioneDAO.costoBasso(imodel.getObject());
-        Label cf = new Label (wicketid, "" + costoBas);
+        CostoMezzoTrasporto cmt = SpedizioneDAO.costoBasso(rowmodel.getObject());
+        String mezzo = "€" + cmt.getCosto() + " (" + cmt.getNomeMezzo() + ")";
+        Label cf = new Label (wicketid, "" + mezzo);
         item.add(cf);
       }
     };
-    */
+    
     // COLONNA AZIONI PER AGGIORNARE, MODIFICARE O ELIMINARE
     
     AbstractColumn<Spedizione, String> azioni = new AbstractColumn<Spedizione, String>(Model.of("Azioni"))
@@ -65,8 +67,8 @@ public class PaginaSpedizioni extends PaginaBase
     spedizione.add(id);
     spedizione.add(numero);
     spedizione.add(data);
-    // spedizione.add(pesoTot);
-    // spedizione.add(costoBas);
+    spedizione.add(pesoTot);
+    spedizione.add(mdt);
     spedizione.add(azioni);
         
     SPDataProvider<Spedizione> dataprov = new SPDataProvider<>(Spedizione.class);
