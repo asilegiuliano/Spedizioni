@@ -24,7 +24,7 @@ public class PaginaCosti extends PaginaBase
     PropertyColumn <CostoMezzoTrasporto, String> costo = new PropertyColumn<>(Model.of("Costo"), "costo");
 
     // COLONNA AZIONI PER AGGIORNARE, MODIFICARE O ELIMINARE
-    /*
+
     AbstractColumn<CostoMezzoTrasporto, String> azioni = new AbstractColumn<CostoMezzoTrasporto, String>(Model.of("Azioni"))
     {
       @Override
@@ -33,18 +33,18 @@ public class PaginaCosti extends PaginaBase
         item.add(new AzioniPanel(wicketid, imodel.getObject()));
       }
     };
-    */
+
     costi.add(id);
     costi.add(nome_mezzo);
     costi.add(peso_massimo);
     costi.add(costo);
-    // costi.add(azioni);
+    costi.add(azioni);
     
     SPDataProvider<CostoMezzoTrasporto> dataprov = new SPDataProvider<>(CostoMezzoTrasporto.class);
     
     DefaultDataTable table = new DefaultDataTable ("costi", costi, dataprov, 10);
     
     add(table);
-    // add(new FormEditCostoMezzoTrasporto("editCosto"));
+    add(new FormEditCostoMezzoTrasporto("editCosto"));
   }
 }

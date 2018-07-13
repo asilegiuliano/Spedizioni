@@ -20,6 +20,7 @@ public class DAOGenerico
       }
       else
       {
+        p = em.find(p.getClass(), p.getId()); // ricarica l'oggetto
         em.merge(p); // update
       }
       et.commit();

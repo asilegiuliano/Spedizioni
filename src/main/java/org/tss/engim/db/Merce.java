@@ -63,7 +63,8 @@ public class Merce implements Serializable, ChiavePrimaria
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "peso")
   private BigDecimal peso;
-  @OneToMany(cascade = CascadeType.ALL, mappedBy = "idMerce")
+  // @OneToMany(cascade = CascadeType.ALL, mappedBy = "idMerce")
+  @OneToMany( mappedBy = "idMerce")
   private Collection<MerceSpedizione> merceSpedizioneCollection;
 
   public Merce()

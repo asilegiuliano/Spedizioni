@@ -10,6 +10,7 @@ org/tss/engim/AzioniPanel$1.class
 org/tss/engim/PaginaSpedizioni$1.class
 org/tss/engim/PM$EntityMapMXBean.class
 org/tss/engim/db/Spedizione_.class
+org/tss/engim/FormEditCostoMezzoTrasporto.class
 org/tss/engim/PM$EMapMBean.class
 org/tss/engim/db/Merce.class
 org/tss/engim/dao/SpedizioneDAO.class
@@ -22,6 +23,7 @@ org/tss/engim/PaginaSpedizioni$2.class
 org/tss/engim/NavMenu.class
 org/tss/engim/PM$EMWrapper.class
 org/tss/engim/db/Spedizione.class
+org/tss/engim/PaginaCosti$1.class
 org/tss/engim/PM$EMWrapperMBean.class
 org/tss/engim/PM$EntityMap.class
 org/tss/engim/PM$1.class
