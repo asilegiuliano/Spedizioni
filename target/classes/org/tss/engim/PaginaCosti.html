@@ -8,18 +8,20 @@
   
   <form wicket:id="editCosto">
     <fieldset>
+      <!--
       <label for="id">Id:
         <input type="text" wicket:id="id" id="id">
       </label>
+      -->
       <label for="nomeMezzo">Nome Mezzo:
         <input type="text" wicket:id="nomeMezzo" id="nomeMezzo">
       </label>
       <br>
       <label for="pesoMassimo">Peso Massimo:
-        <input type="text" wicket:id="pesoMassimo" id="pesoMassimo">
+        <input type="number" wicket:id="pesoMassimo" id="pesoMassimo">
       </label>
       <label for="costo">Costo:
-        <input type="text" wicket:id="costo" id="costo">
+        <input type="number" wicket:id="costo" id="costo">
       </label>
     </fieldset>
     <input type="submit" value="Salva">

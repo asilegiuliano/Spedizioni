@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import org.tss.engim.db.Merce;
 import org.tss.engim.db.Spedizione;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-13T15:59:30")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-13T17:07:34")
 @StaticMetamodel(MerceSpedizione.class)
 public class MerceSpedizione_ { 
 

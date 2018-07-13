@@ -24,7 +24,7 @@ public class FormEditCostoMezzoTrasporto extends Form<CostoMezzoTrasporto>
     
     setDefaultModel(new CompoundPropertyModel<CostoMezzoTrasporto>(c));
     
-    add(new TextField("id"));
+    // add(new TextField("id"));
     
     //add(new TextField("nomeMezzo"));
     TextField nomeMezzo = new TextField("nomeMezzo");
@@ -43,6 +43,7 @@ public class FormEditCostoMezzoTrasporto extends Form<CostoMezzoTrasporto>
     costo.setStep(0.1);
     costo.setRequired(true);
     costo.add(new RangeValidator<>(BigDecimal.valueOf(0.1), BigDecimal.valueOf(1000000)));
+    add(costo);
   }
 
   @Override

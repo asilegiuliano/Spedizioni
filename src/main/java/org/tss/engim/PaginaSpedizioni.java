@@ -13,7 +13,6 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.tss.engim.dao.SpedizioneDAO;
 import org.tss.engim.db.CostoMezzoTrasporto;
-// import org.engim.db.CostoMezzoTrasporto;
 import org.tss.engim.db.Spedizione;
 
 public class PaginaSpedizioni extends PaginaBase
@@ -77,7 +76,7 @@ public class PaginaSpedizioni extends PaginaBase
     
     add(table);
     
-    // add(new FormEditSpedizioni("editSpedizioni"));
+    add(new FormEditSpedizioni("editSpedizioni"));
   }
 
 }

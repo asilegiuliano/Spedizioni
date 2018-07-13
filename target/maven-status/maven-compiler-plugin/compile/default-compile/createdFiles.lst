@@ -16,6 +16,7 @@ org/tss/engim/db/Merce.class
 org/tss/engim/dao/SpedizioneDAO.class
 org/tss/engim/SPLDModel.class
 org/tss/engim/db/ChiavePrimaria.class
+org/tss/engim/FormEditSpedizioni.class
 org/tss/engim/db/MerceSpedizione_.class
 org/tss/engim/db/CostoMezzoTrasporto_.class
 org/tss/engim/PaginaBase.class
